@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --paddingLeftRight: calc((100vw - 1000px) / 2);
+    --paddingTopBottom: calc((100vh - 500px) / 2);
+    --backgroundColor: rgba(64, 224, 208, 0.384);
+    --borderColor: rgb(29, 133, 122);
+    --primary-color: red;
+    --secondary-color: blue;
+    --tertiary-color: green;
+}
+
+* {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding :  var(--paddingTopBottom) var(--paddingLeftRight);
+    height: 100vh;
+    background-color: var(--backgroundColor);
+    overflow: hidden;
+}
+
+
+#content > .developer {
+    border: 1px var(--borderColor) solid;
+    width: 25%;
+    margin-right: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--backgroundColor);
+    padding-top: 10px;
+}
+#content > .developer .avatar object {
+    width: 100%;
+}
+#avatarSvg {
+    fill: red;    
+}
+
+#content > .developer .name {
+    color: var(--borderColor);
+}
+#content > .developer .webDeveloper {
+
+}
+#content > .condevelopertact .location {
+
+}
+#content > .developer .emailMe {
+    border: 1px var(--borderColor) solid;
+    background-color: var(--backgroundColor);
+    padding: 10px 30px;
+    color: white;
+}
+
+
+@media only screen and (max-width: 800px) {
+    #content {
+        flex-direction: column;
+    }
+    #content > .developer {
+        flex-direction: row;
+    }
+}
+
+#presentation {
+    border: 1px var(--borderColor) solid;
+    width: 75%;
+    height: 100%;
+    background-color: var(--backgroundColor);
+    color: rgb(255, 255, 255);
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    /* font-weight: 700; */
+}
+#presentation .menu {
+    display: block;
+    margin-bottom: 20px;
+}
+#presentation .menu::after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#presentation > .menu > div {
+    display: block;
+    float: right;
+    border: 1px var(--borderColor) solid;
+    background-color: var(--backgroundColor);
+    color: rgb(255, 255, 255);
+    width: 100px;
+    text-align: center;
+    padding: 5px 0px;
+}
+#presentation .menu .justifyLeft {
+    float: left;
+}
+
+
+#presentation > #aboutMe {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    row-gap: 5px;
+}
+#presentation > #aboutMe .description {
+    padding-top: 30px;
+    grid-column: 1 / span 2;
+}
+#presentation > #aboutMe > .title {
+    padding-top: 30px;
+    grid-column: 1 / span 2;
+}
+#presentation > #aboutMe div[class*='article'] {
+    display: grid;
+    grid-template-columns: 0.1fr 0.9fr;
+    column-gap: 5px;
+    padding-top: 10px;
+    margin-left: 30px;
+}
+#presentation > #aboutMe > div[class*='article'] i {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+    text-align: center;
+    grid-row: 1 / span 2;
+}
+#presentation > #aboutMe > div[class*='article'] .title {
+    font-size: large;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+#presentation > #aboutMe > div[class*='article'] .content {
+    font-size: x-small;
+    padding-top: 5px;
+}
+
+#presentation > #portofolio {
+    display: none;
+    overflow-y: scroll;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+}
+
+#presentation > #portofolio div[class*='img'] {
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+
+#presentation > #portofolio .img1 {
+    background-image: url("./proj1.jpg");
+}
+#presentation > #portofolio .img2 {
+    background-image: url("./proj2.jpg");
+}
+#presentation > #portofolio .img3 {
+    background-image: url("./proj3.jpg");
+}
+#presentation > #portofolio .img4 {
+    background-image: url("./proj1.jpg");
+}
+#presentation > #portofolio .img5 {
+    background-image: url("./proj2.jpg");
+}
+#presentation > #portofolio .img6 {
+    background-image: url("./proj3.jpg");
+}
+#presentation > #portofolio .img7 {
+    background-image: url("./proj1.jpg");
+}
+#presentation > #portofolio .img8 {
+    background-image: url("./proj1.jpg");
+}
+
+
+#presentation > #resume {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    row-gap: 5px;
+}
+
+#presentation > #resume div[class*='article'] {
+    display: grid;
+    grid-template-columns: 0.1fr 0.9fr;
+    column-gap: 5px;
+    padding-top: 10px;
+    margin-left: 30px;
+}
+#presentation > #resume > div[class*='article'] i {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+    text-align: center;
+    grid-row: 1 / span 2;
+}
+#presentation > #resume > div[class*='article'] .title {
+    font-size: large;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+#presentation > #resume > div[class*='article'] .content {
+    font-size: x-small;
+    padding-top: 5px;
+}
+
+#presentation > #aboutMe {
+    display: none;
+}
+
+
+
+
+
+#presentation > #contact {
+    display: none;
+    justify-content: center;
+}
+#presentation > #contact form {
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+}
+#presentation > #contact div {
+    grid-column: 1 / span 2;
+}
+#presentation > #contact input {
+    margin-bottom: 10px;
+    grid-column-end: span 2;
+}
+#presentation > #contact textarea {
+    margin-bottom: 10px;
+    grid-column: 1 / span 2;
+}
+#presentation > #contact #submit {
+    margin-bottom: 10px;
+    grid-column-end: span 1;
+}
+#presentation > #contact #reset {
+    margin-bottom: 10px;
+    grid-column-end: span 1;
+}
+
