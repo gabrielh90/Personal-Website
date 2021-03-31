@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css" title="Foaie de stiluri">
+    <link rel="stylesheet" type="text/css" href="./index.css" title="Foaie de stiluri">
     <link rel="shortcut icon" href="global.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Website Agency</title>
 </head>
 <body>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+        
+    </div> 
     
     <div id="content">
         <div class="developer">
-            <div class="avatar">
-                <object type="image/svg+xml" data="./myPhoto.svg">
-                    <img src="./myPhoto.png" width="100%" alt="Avatar">
-                </object>
-            </div>
-            <div class="name">Gabriel Hromei</div>
-            <div class="webDeveloper">Web developer</div>
-            <div class="location">
-                <a href="https://www.google.ro/maps/dir///@47.9428608,26.4155895,14z">
-                    Dorohoi, Romania
-                </a>
-            </div>
-            <div class="emailMe"
-                onclick="document.getElementById('menu').children[3].click();"
-                >Contact
+            <object type="image/svg+xml" data="./myPhoto.svg">
+                <img src="./myPhoto.png" width="100%" alt="Avatar">
+            </object>
+            <div class="captions">
+                <div class="name">Gabriel Hromei</div>
+                <div class="webDeveloper">Web developer</div>
+                <div class="location">
+                    <a href="https://www.google.ro/maps/dir///@47.9428608,26.4155895,14z">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Dorohoi, Romania
+                    </a>
+                </div>
+                <div class="contact"
+                    onclick="document.getElementById('menu').children[3].click();"
+                    >Contact
+                </div>
             </div>
         </div>
         <div id="presentation">
@@ -51,92 +60,144 @@
                 </div>
                 <div class="title">What I'm doing</div>
                 <div class="article1">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="material-icons">laptop</i>
+                    <!-- <i class="fas fa-laptop-code"></i> -->
                     <div class="title">Web development</div>
                     <div class="content">
                         Able to create beautiful sites by using
                         <span>HTML</span> -
                         <span>CSS</span> -
-                        <span>Js</span> -
+                        <span>JS</span> -
                         <span>React</span>
                     </div>
                 </div>
                 <div class="article2">
-                    <i class="far fa-paper-plane"></i>
-                    <div class="title">Html emails</div>
+                    <i class="material-icons">email</i>
+                    <!-- <i class="far fa-paper-plane"></i> -->
+                    <div class="title">HTML emails</div>
                     <div class="content">
                         Able to create HTML Emails quickly and effective
                     </div>
                 </div>  
                 <div class="article3">
-                    <i class="fas fa-mobile-alt"></i>
+                    <i class="material-icons">phone_android</i>
+                    <!-- <i class="fas fa-mobile-alt"></i> -->
                     <div class="title">Responsive design</div>
                     <div class="content">
                         Able to create mobile responsive sites at a professional level
                     </div>
                 </div>
                 <div class="article4">
-                    <i class="fas fa-headset"></i>
+                    <i class="material-icons">support_agent</i>
+                    <!-- <i class="fas fa-headset"></i> -->
                     <div class="title">Strong support</div>
                     <div class="content">
                         Able to communicate ideas in a breaf way
                     </div>
                 </div>
+                <div class="dummy"></div>
             </div>
             <div id="portofolio">
-                <div class="img1"></div>
-                <div class="img2"></div>
-                <div class="img3"></div>
-                <div class="img4"></div>
-                <div class="img5"></div>
-                <div class="img6"></div>
-                <div class="img7"></div>
-                <div class="img8"></div>
+                <figure class="project0" onclick="showModal('project0')">
+                    <img src="./projects/CreativeAgencyHero.jpg" alt="Creative Agency" style="width:100%"
+                    ><figcaption>HTML - JS - CSS</figcaption>
+                    <div class="slideshow">
+
+                        <div class="mySlides">
+                            <div class="numberSlide"></div>
+                            <img src="./projects/CreativeAgency.jpg" alt="carusel2">
+                            <div class="captionText"></div>
+                        </div>
+
+                        <a class="prev" onclick="showSlides(event, -1)">&#10094;</a>
+                        <a class="next" onclick="showSlides(event, 1)">&#10095;</a>
+                    </div>
+                </figure> 
+                <figure class="project1" onclick="showModal('project1')">
+                    <img src="./projects/PhonesHero.jpg" alt="Creative Agency" style="width:100%"
+                    ><figcaption>HTML - Bootstrap - CSS</figcaption>
+                    <div class="slideshow">
+                        <div class="mySlides">
+                            <div class="numberSlide">1/5</div>
+                            <img src="./projects/PhonesHome.jpg" alt="carusel1">
+                            <div class="captionText"></div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numberSlide">2/5</div>
+                            <img src="./projects/PhonesAboutUs.jpg" alt="carusel1">
+                            <div class="captionText"></div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numberSlide">3/5</div>
+                            <img src="./projects/PhonesServices.jpg" alt="carusel1">
+                            <div class="captionText"></div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numberSlide">4/5</div>
+                            <img src="./projects/PhonesBlog.jpg" alt="carusel1">
+                            <div class="captionText"></div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numberSlide">1/5</div>
+                            <img src="./projects/PhonesContact.jpg" alt="carusel1">
+                            <div class="captionText"></div>
+                        </div>
+
+
+                        <a class="prev" onclick="showSlides(event, -1)">&#10094;</a>
+                        <a class="next" onclick="showSlides(event, 1)">&#10095;</a>
+                    </div>
+                </figure> 
             </div>
             <div id="resume">
                 <div class="article1">
-                    <i class="fas fa-graduation-cap"></i>
+                    <i class="material-icons">school</i>
+                    <!-- <i class="fas fa-graduation-cap"></i> -->
                     <div class="title">Education</div>
                     <div class="content">
-                        2009 - 2013 Bachelor’s degree 
-                        Engineer Diploma in Computer Science 
+                        2009 - 2013 <span>Bachelor’s degree 
+                        Engineer Diploma in Computer Science</span>
                     </div>
                 </div>
                 <div class="article2">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="material-icons">work</i>
+                    <!-- <i class="fas fa-briefcase"></i> -->
                     <div class="title">Experience</div>
                     <div class="content">
-                        2013 – 2019 Design Verification Engineer.
-                        2020 - Web & App Freelancer developer.
+                        
+                        2013 – 2019 <span>Design Verification Engineer</span><br/>
+                        2020 - <span>Web & App Freelancer developer</span>
                     </div>
                 </div>
                 <div class="article3">
-                    <i class="fas fa-code"></i>
+                    <i class="material-icons">integration_instructions</i>
+                    <!-- <i class="fas fa-code"></i> -->
                     <div class="title">Knowledge Skills
                         <!-- Practical Skills -->
                     </div>
                     <div class="content">
-                        HTML
-                        CSS
-                        JavaScript
-                        React
-                        SQL
-                        MongoDB          
+                        <span>HTML</span
+                        ><span>CSS</span
+                        ><span>Java Script</span
+                        ><div class="dummy"></div><span>React</span
+                        ><span>SQL</span
+                        ><span>Mongo DB</span>
                     </div>
                 </div>
                 <div class="article4">
-                    <i class="fas fa-random"></i>
+                    <i class="material-icons">dashboard</i>
+                    <!-- <i class="fas fa-random"></i> -->
                     <div class="title">Miscellaneous</div>
                     <div class="content">
-                        Bike
-                        Swimming
-                        Coffee
-                        Movie
+                        <i class="material-icons">directions_bike</i>
+                        <i class="material-icons">pool</i>
+                        <i class="material-icons">local_drink</i>
+                        <i class="material-icons">movie</i>
                     </div>
                 </div>
             </div>
             <div id="contact">
-                <form action="" method="get">
+                <form id="form">
                     <div class="title">Get In Touch!</div>
                     <div class="description">
                         Leave a message below, and I will email you back as soon as I can!
@@ -146,14 +207,16 @@
                     <input type="text" name="name" id="name" placeholder="Full Name">
                     <input type="email" name="email" id="email" placeholder="Email">
                     <input type="text" name="subject" id="subject" placeholder="Subject">
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                    <!-- <input type="text" name="phone" id="phone" placeholder="Subject"> -->
+                    <textarea name="message" id="message" cols="30" rows="7" placeholder="Message"></textarea>
                     <input type="submit" id="submit" value="Send Message" >
                     <input type="reset" id="reset" value="Reset form">
                 </form>
             </div>
+            <div class="dummy"></div>
         </div>
     </div>
     <script src="./index.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
