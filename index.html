@@ -98,24 +98,24 @@
                 <div class="dummy"></div>
             </div>
             <div id="portofolio">
-                <figure class="project0" onclick="showModal('project0')">
-                    <img src="./projects/creativeagencyhero.jpg" alt="Creative Agency" style="width:100%"
-                    ><figcaption>HTML - JS - CSS</figcaption>
+                <figure class="project0" >
+                    <img onclick="displaySlideshow('project0')" src="./projects/creativeagencyhero.jpg" alt="Creative Agency" style="width:100%"
+                    ><figcaption  onclick="displayDemo('project0')">Demo - HTML - JS - CSS</figcaption>
+                    <iframe onClick="stopPropagation(event)" src="./Portofolio/CreativeAgency/index.html" width="100%" height="100%" style="border:1px solid black;"></iframe>
                     <div class="slideshow">
-
                         <div class="mySlides">
                             <div class="numberSlide"></div>
                             <img src="./projects/CreativeAgency.jpg" alt="carusel2">
                             <div class="captionText"></div>
                         </div>
-
                         <a class="prev" onclick="showSlides(event, -1)">&#10094;</a>
                         <a class="next" onclick="showSlides(event, 1)">&#10095;</a>
                     </div>
                 </figure> 
-                <figure class="project1" onclick="showModal('project1')">
-                    <img src="./projects/phoneshero.jpg" alt="Creative Agency" style="width:100%"
-                    ><figcaption>HTML - Bootstrap - CSS</figcaption>
+                <figure class="project1" >
+                    <img onclick="displaySlideshow('project1')" src="./projects/phoneshero.jpg" alt="Phones Agency" style="width:100%"
+                    ><figcaption onclick="displayDemo('project1')">HTML - Bootstrap - CSS</figcaption>
+                    <iframe onClick="stopPropagation(event)" src="./Portofolio/Phones/index.html" width="100%" height="100%" style="border:1px solid black;"></iframe>
                     <div class="slideshow">
                         <div class="mySlides">
                             <div class="numberSlide">1/5</div>
@@ -138,7 +138,7 @@
                             <div class="captionText"></div>
                         </div>
                         <div class="mySlides">
-                            <div class="numberSlide">1/5</div>
+                            <div class="numberSlide">5/5</div>
                             <img src="./projects/phonescontact.jpg" alt="carusel1">
                             <div class="captionText"></div>
                         </div>

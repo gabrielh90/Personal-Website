@@ -305,9 +305,11 @@
 }
 #presentation > #portofolio [class*='project'] >  figcaption {
     height: 15%;
+    cursor: pointer;
 }
 #presentation > #portofolio [class*='project'] >  .slideshow {
     display: none;
+    position: relative;
 }
 @media only screen and (max-width: 800px) {
     #presentation > #portofolio {
@@ -331,6 +333,14 @@
 }
 
 
+
+#presentation > #portofolio iframe {
+    display: none;
+}
+
+iframe:focus {
+    outline: none;
+}
 
 /* The Modal (background) */
 .modal {
@@ -365,23 +375,23 @@
   cursor: pointer;
 }
 
-.mySlides {
+.modal .mySlides {
 	display: none;
 	width: 100%;
 	position: relative;
 }
-.mySlides:first-child {
+.modal .mySlides:first-child {
 	display: block;
 }
 
-.numberSlide{
+.modal .numberSlide{
     color: #f2f2f2;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
 }
-.captionText {
+.modal .captionText {
     margin: auto;
     display: block;
     width: 80%;
@@ -392,34 +402,40 @@
     height: 150px;
 } 
 
-.mySlides img {
+.modal .mySlides img {
 	vertical-align: middle;
 	align-content: center;
 	min-height: 400px;
 	width: 100%;
 }
 
-.prev, .next {
-	cursor: pointer;
-	position: absolute;
-	top: 50%;
+.modal .prev, .modal .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	position: fixed;
+    z-index: 1000;
+	top: 0;
 	width:auto;
+    height: 100%;
 	padding: 16px;
-	margin-top: -22px;
 	color: white;
 	font-weight: bold;
 	font-size: 18px;
-	border-radius: 0 3px 3px 0;
+	border-radius: 0 70% 70% 0;
 	transition: 0.6s ease;
 	user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.next{
+.modal .next{
 	right:0;
-	border-radius: 3px 0 0 3px;
+	border-radius: 50% 0 0 50%;
 }
 
-.prev:hover, .next:hover {
+.modal .prev:hover, .modal .next:hover {
 	background-color: rgba(0, 0, 0, 0.6)
 }
 

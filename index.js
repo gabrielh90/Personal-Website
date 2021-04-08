@@ -33,21 +33,25 @@ document.getElementById('form').addEventListener('submit', sendMail);
 // Get the modal
 var modal = document.getElementById("myModal");
 var project = null;
+//Display demo
+var demo = null;
 var interval = null;
-function showModal(projectName) {
+function displaySlideshow(projectName) {
     project = document.getElementsByClassName(projectName)[0];
     modal.appendChild(project.getElementsByClassName('slideshow')[0]);
     modal.style.display = "block";
-    
     interval = setInterval(showSlides.bind(null), 4000);
 }
 function closeModal() {
-    project.appendChild(modal.getElementsByClassName("slideshow")[0]);
+    if(project) {
+        project.appendChild(modal.getElementsByClassName("slideshow")[0]);
+        clearInterval(interval);
+    }
+    else if (demo) {
+        demo.appendChild(modal.getElementsByTagName('iframe')[0]);
+    }
     modal.style.display = "none";
-    
-    clearInterval(interval);
 }
-
 
 var slideIndex = 0;
 function showSlides(e, n = 1, add = 1) {
@@ -68,4 +72,24 @@ function showSlides(e, n = 1, add = 1) {
     if(slideIndex < 0) slideIndex = mySlides.length-1;
 
     mySlides[slideIndex].style.display = "block";
+}
+
+function displayDemo(projectName) {
+    demo = document.querySelector("#portofolio > ." + projectName);
+    // alert(demo)
+    modal.appendChild(demo.getElementsByTagName('iframe')[0]);
+    modal.style.display = "block";
+
+    // demo = document.getElementsByClassName("portofolio > " + projectName)[0].getElementsByTagName('iframe')[0];
+    // demo = document.querySelector("#portofolio > ." + projectName).getElementsByTagName('iframe')[0];
+    // demo.style.display = "block";
+}
+function closeDemo() {
+    modal.style.display = "none";
+    // demo.style.display = "none";
+}
+
+function stopPropagation(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
 }
